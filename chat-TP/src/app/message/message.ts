@@ -1,5 +1,5 @@
-class Utilisateur {
-}
+import {Utilisateur} from '../utilisateur/utilisateur';
+
 
 export class Message {
 

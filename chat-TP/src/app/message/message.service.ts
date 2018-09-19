@@ -8,7 +8,7 @@ export class MessageService {
   messages: Array<Message> = new Array<Message>();
   apiUrl= '';
   constructor(private http: Http, private appConfig: AppConfigService) {
-    this.apiUrl = appConfig.apiUrl + '/message/';
+    this.apiUrl = appConfig.apiUrl + '/salon/1/message/';
 
     this.http
       .get(this.apiUrl)

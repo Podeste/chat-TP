@@ -8,28 +8,24 @@
       <th>Date</th>
       <th>Expediteur</th>
       <th></th>
-      <th></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let message of list()" >
       <td [routerLink]="['/message/'+message.id]">{{message.id}}</td>
       <td [routerLink]="['/message/'+message.id]">{{message.texte}}</td>
-      <td [routerLink]="['/message/'+message.id]">{{message.date}}</td>
-      <td [routerLink]="['/message/'+message.id]">{{message.expediteur}}</td>
+      <td [routerLink]="['/message/'+message.id]">{{message.date | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+      <td [routerLink]="['/message/'+message.id]">{{message.expediteur.username}}</td>
       <td><a class="btn btn-info" (click)="edit(message.id)">Editer</a></td>
-      <td><a class="btn btn-danger" (click)="delete(message.id)">Supprimer</a></td>
     </tr>
     <tr *ngIf="buttonAdd">
       <td colspan="11"><a class="btn btn-success" (click)="add()">Ajouter</a></td>
     </tr>
-    <tr *ngIf="formMatiere">
-      <td>{{formMatiere.id}}</td>
-      <td>{{formMatiere.version}}</td>
-      <td><input type="text" [(ngModel)]="formMatiere.id"/></td>
-      <td><input type="text" [(ngModel)]="formMatiere.texte"/></td>
-      <td><input type="date" [(ngModel)]="formMatiere.dateMsg"/></td>
-      <td><input type="text" [(ngModel)]="formMatiere.id"/></td>
+    <tr *ngIf="formMessage">
+      <td>{{formMessage.id}}</td>
+      <td><input type="text" [(ngModel)]="formMessage.texte"/></td>
+      <td><input type="date" [(ngModel)]="formMessage.dateMsg"/></td>
+      <td><input type="text" /></td>
       <td><a class="btn btn-info" (click)="save()">Valider</a></td>
       <td><a class="btn btn-warning" (click)="annul()">Annuler</a></td>
     </tr>
