@@ -16,7 +16,7 @@ export class UtilisateurDetailComponent implements OnInit {
       console.log(params['id']);
       // @ts-ignore
       this.utilisateurService
-        .findById(Number(params['id']),true)
+        .findById((params['id']),true)
         .subscribe(resp => this.utilisateur = resp.json());
     });
   }

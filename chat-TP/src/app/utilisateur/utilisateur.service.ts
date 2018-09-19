@@ -12,9 +12,9 @@ export class UtilisateurService {
   constructor(private http: Http, private appConfig: AppConfigService) {
     this.apiUrl = this.appConfig.apiUrl + '/utilisateur/';
 
-    this.http
+/*    this.http
       .get(this.apiUrl)
-      .subscribe(resp => this.utilisateurs = resp.json());
+      .subscribe(resp => this.utilisateurs = resp.json());*/
 
   }
 
@@ -24,7 +24,8 @@ export class UtilisateurService {
 
   public findById(id: number, details?: boolean): any {
     if (details) {
-      return this.http.get(this.apiUrl + id);
+      return this.http
+        .get(this.apiUrl + id);
     }
     for (const utilisateur of this.utilisateurs) {
       if (utilisateur.id === id) {
