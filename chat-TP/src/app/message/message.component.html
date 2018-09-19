@@ -23,9 +23,9 @@
     </tr>
     <tr *ngIf="formMessage">
       <td>{{formMessage.id}}</td>
-      <td><input type="text" [(ngModel)]="formMessage.texte"/></td>
-      <td><input type="date" [(ngModel)]="formMessage.dateMsg"/></td>
-      <td><input type="text" /></td>
+      <td colspan = '2'>< input type="text" [(ngModel)]="formMessage.texte"/></td>
+
+      <td>{{currentUsername}}</td>
       <td><a class="btn btn-info" (click)="save()">Valider</a></td>
       <td><a class="btn btn-warning" (click)="annul()">Annuler</a></td>
     </tr>

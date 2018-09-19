@@ -8,6 +8,7 @@ import {AppConfigService} from './app-config.service';
 import {RouterModule, Routes} from '@angular/router';
 import {SalonModule} from './salon/salon.module';
 import {MessageModule} from './message/message.module';
+import {AppUtilisateurService} from './app-utilisateur.service';
 
 const routes: Routes = [
 
@@ -27,7 +28,7 @@ const routes: Routes = [
     SalonModule,
     MessageModule
   ],
-  providers: [AppConfigService],
+  providers: [AppConfigService, AppUtilisateurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

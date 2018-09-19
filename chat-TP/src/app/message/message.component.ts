@@ -13,7 +13,10 @@ export class MessageComponent implements OnInit {
 
   private buttonAdd = true;
 
+  private currentUsername: string;
+
   constructor(private messageService: MessageService) {
+    this.currentUsername = messageService.currentUsername;
   }
 
   ngOnInit() {
@@ -38,9 +41,7 @@ export class MessageComponent implements OnInit {
     this.annul();
   }
 
-  public delete(id: number) {
-    this.messageService.delete(this.messageService.findById(id));
-  }
+  
 
   public annul(){
     this.formMessage = null;
