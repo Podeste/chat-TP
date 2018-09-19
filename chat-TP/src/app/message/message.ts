@@ -5,14 +5,14 @@ export class Message {
 
   id: number;
   texte: string;
-  dateMsg: Date;
+  date: Date;
   expediteur: Utilisateur;
 
 
-  constructor(id?: number, texte?: string, dateMsg?: Date, expediteur?: Utilisateur) {
+  constructor(id?: number, texte?: string, date?: Date, expediteur?: Utilisateur) {
     this.id = id;
     this.texte = texte;
-    this.dateMsg = dateMsg;
+    this.date = date;
     this.expediteur = expediteur;
   }
 }

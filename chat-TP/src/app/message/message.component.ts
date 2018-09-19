@@ -41,7 +41,7 @@ export class MessageComponent implements OnInit {
     this.annul();
   }
 
-  
+
 
   public annul(){
     this.formMessage = null;
