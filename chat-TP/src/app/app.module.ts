@@ -5,15 +5,25 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {AppConfigService} from './app-config.service';
+import {RouterModule, Routes} from '@angular/router';
+import {SalonModule} from './salon/salon.module';
+
+const routes: Routes = [
+
+];
 
 @NgModule({
   declarations: [
     AppComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule,
+    RouterModule.forRoot(routes),
+    SalonModule
   ],
   providers: [AppConfigService],
   bootstrap: [AppComponent]

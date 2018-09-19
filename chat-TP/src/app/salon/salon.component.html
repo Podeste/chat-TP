@@ -1,0 +1,26 @@
+<div class="container">
+<h1>Liste des salons</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Identifiant</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Date de création</th>
+      <th>Créateur</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let salon of list()" >
+      <td>{{salon.id}}</td>
+      <td>{{salon.nom}}</td>
+      <td>{{salon.description}}</td>
+      <td>{{salon.dateCreation | date:"dd/MM/yyyy"}}</td>
+      <td>TO DO</td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
