@@ -9,6 +9,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SalonModule} from './salon/salon.module';
 import {MessageModule} from './message/message.module';
 import {AppUtilisateurService} from './app-utilisateur.service';
+import {UtilisateurModule} from './utilisateur/utilisateur.module';
 
 const routes: Routes = [
 
@@ -26,7 +27,8 @@ const routes: Routes = [
     RouterModule,
     RouterModule.forRoot(routes),
     SalonModule,
-    MessageModule
+    MessageModule,
+    UtilisateurModule
   ],
   providers: [AppConfigService, AppUtilisateurService],
   bootstrap: [AppComponent]
