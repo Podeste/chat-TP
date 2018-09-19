@@ -1,0 +1,59 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Identifiant</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Date de création</th>
+      <th>Créateur</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr >
+      <td>{{salon.id}}</td>
+      <td>{{salon.nom}}</td>
+      <td>{{salon.description}}</td>
+      <td>{{salon.dateCreation | date:"dd/MM/yyyy"}}</td>
+      <td>{{salon.createur.username}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <h2>Liste des utilisateurs</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let utilisateur of salon.utilisateurs">
+      <td>{{utilisateur.id}}</td>
+      <td>{{utilisateur.username}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h2>Liste des messages</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Expediteur</th>
+      <th>Date</th>
+      <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let message of salon.messages">
+      <td>{{message.expediteur.username}}</td>
+      <td>{{message.date| date:"dd/MM/yyyy HH:mm:ss"}}</td>
+      <td>{{message.texte}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
