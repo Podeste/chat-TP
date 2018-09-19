@@ -1,0 +1,34 @@
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Identifiant</th>
+      <th>Username</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let utilisateur of list()">
+      <td [routerLink]="['/utilisateur/'+utilisateur.id]">{{utilisateur.id}}</td>
+      <td>{{utilisateur.username}}</td>
+      <td><a class="btn btn-info" (click)="edit(utilisateur.id)">Editer</a></td>
+      <td><a class="btn btn-danger" (click)="delete(utilisateur.id)">Supprimer</a></td>
+    </tr>
+    <tr>
+      <td colspan="7"><a class="btn btn-success" (click)="add()">Ajouter</a></td>
+    </tr>
+    <tr *ngIf="formUtilisateur">
+      <td>{{formUtilisateur.id}}</td>
+      <td>{{formUtilisateur.version}}</td>
+
+      <td><input type="text" [(ngModel)]="formUtilisateur.username"/></td>
+
+      <td><a class="btn btn-info" (click)="save()">Valider</a></td>
+      <td><a class="btn btn-warning" (click)="cancel()">Annuler</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

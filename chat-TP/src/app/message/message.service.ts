@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Message } from './message';
 import { AppConfigService } from '../app-config.service';
+import { AppUtilisateurService } from '../app-utilisateur.service';
 
 @Injectable()
 export class MessageService {
   messages: Array<Message> = new Array<Message>();
   apiUrl= '';
-  constructor(private http: Http, private appConfig: AppConfigService) {
+  currentUsername = '';
+  constructor(private http: Http, private appConfig: AppConfigService, private appUtilisateur: AppUtilisateurService) {
     this.apiUrl = appConfig.apiUrl + '/salon/1/message/';
-
+    this.currentUsername = appUtilisateur.user.username;
     this.http
       .get(this.apiUrl)
       .subscribe(resp => this.messages = resp.json());
