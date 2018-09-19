@@ -1,1 +1,24 @@
+
+
 <router-outlet></router-outlet>
+
+
+
+<tr *ngIf="formSalon"></tr>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><input type="text" [(ngModel)]="currentUsername"/></th>
+      <th><a class="btn btn-info" (click)="log()">Valider</a></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="formSalon">
+    <tr  *ngFor="let salon of listSalons()">
+
+      <td>{{salon.nom}}</td>
+      <td><a class="btn btn-info" (click)="choose(salon.id)">Choisir</a></td>
+    </tr>
+  </tbody>
+</table>
+
